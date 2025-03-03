@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Primary */
+/* Neutral */
+body {
+  background-color: hsl(226, 43%, 10%);
+  font-family: "Rubik", sans-serif;
+  color: hsl(236, 100%, 87%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+body main {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  body main {
+    flex-direction: row;
+    align-items: stretch;
+    column-gap: 2rem;
+    font-size: 0.95rem;
+    max-width: 44rem;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  body main {
+    max-width: 60rem;
+    min-height: 0;
+    max-height: 48rem;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 80rem) {
+  body main {
+    max-width: 80rem;
+    max-height: 64rem;
+  }
+}
+
+.selected {
+  color: white !important;
+}
+
+.card {
+  width: 100%;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 1rem;
+  margin-block-end: 1.5rem;
+  position: relative;
+}
+.card .card-header {
+  border-radius: 1rem;
+  padding-block: 1rem;
+}
+.card .card-header .header-layout {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  padding: 1rem;
+}
+.card .card-header .name {
+  font-size: 1.75rem;
+  line-height: 2.75rem;
+  color: white;
+}
+.card .card-content {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.card .card-content .title {
+  font-size: 1.25rem;
+  color: white;
+}
+.card .card-content .current {
+  font-size: 1.75rem;
+  color: white;
+}
+.card .card-content div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card.profile .card-header {
+  background-color: hsl(246, 80%, 60%);
+}
+.card.profile .card-header img {
+  width: 4rem;
+  border: 3px solid hsl(236, 100%, 87%);
+  border-radius: 50%;
+}
+.card.profile .card-content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card.profile .card-content button {
+  background-color: hsl(235, 46%, 20%);
+  border: none;
+  font-weight: 500;
+  color: hsl(236, 100%, 87%);
+}
+.card.profile .card-content button:hover {
+  cursor: pointer;
+  color: white;
+}
+@media only screen and (min-width: 48rem) {
+  .card {
+    margin-block-end: 0;
+  }
+  .card .card-content .current {
+    font-size: 2.5rem;
+  }
+  .card.profile {
+    width: 50%;
+  }
+  .card.profile .card-header {
+    height: 70%;
+  }
+  .card.profile .card-header .header-layout {
+    column-gap: 0;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 2rem;
+    padding: 2rem 2rem 3rem 2rem;
+  }
+  .card.profile .card-header .header-layout .name {
+    font-size: 2.75rem;
+  }
+  .card.profile .card-header img {
+    width: 6rem;
+  }
+  .card.profile .card-content {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding-block: 1rem;
+  }
+}
+@media only screen and (min-width: 48rem) and (min-width: 64rem) {
+  .card .card-content .current {
+    font-size: 3rem;
+  }
+  .card.profile {
+    width: 35%;
+  }
+  .card.profile .card-header .header-layout .name {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 48rem) and (min-width: 80rem) {
+  .card .card-content .current {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .card .card-content .timeframe {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.time-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.time-list .card {
+  margin-block-end: 6rem;
+}
+.time-list .card .card-header {
+  height: 5rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.time-list .card .card-header img {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+}
+.time-list .card.work .card-header {
+  background-color: hsl(15, 100%, 70%);
+}
+.time-list .card.play .card-header {
+  background-color: hsl(195, 74%, 62%);
+}
+.time-list .card.study .card-header {
+  background-color: hsl(348, 100%, 68%);
+}
+.time-list .card.exercise .card-header {
+  background-color: hsl(145, 58%, 55%);
+}
+.time-list .card.social .card-header {
+  background-color: hsl(264, 64%, 52%);
+}
+.time-list .card.self .card-header {
+  background-color: hsl(43, 84%, 65%);
+}
+.time-list .card .card-content {
+  width: 100%;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 1rem;
+  position: absolute;
+  top: 40px;
+}
+.time-list .card .card-content:hover {
+  background-color: hsl(246, 80%, 60%);
+  cursor: pointer;
+}
+@media only screen and (min-width: 48rem) {
+  .time-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .time-list .card {
+    margin-block-end: 0;
+  }
+  .time-list .card .card-content {
+    padding-block: 1rem;
+    bottom: 0;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  .time-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .time-list .card {
+    margin-block-end: 0;
+  }
+  .time-list .card .card-content {
+    padding-block: 1rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

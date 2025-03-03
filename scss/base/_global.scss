@@ -1,0 +1,44 @@
+@use "../utils/variables";
+
+body {
+  background-color: variables.$very-dark-blue;
+  font-family: variables.$font;
+  color: variables.$pale-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+
+  main {
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+
+    @media only screen and (min-width: 48rem) {
+      flex-direction: row;
+      align-items: stretch;
+      column-gap: 2rem;
+      font-size: 0.95rem;
+      max-width: 44rem;
+    }
+    @media only screen and (min-width: 64rem) {
+      max-width: 60rem;
+      min-height: 0;
+      max-height: 48rem;
+      font-size: 1rem;
+    }
+
+    @media only screen and (min-width: 80rem) {
+      max-width: 80rem;
+      max-height: 64rem;
+    }
+  }
+}
+
+.selected {
+  color: white !important;
+}

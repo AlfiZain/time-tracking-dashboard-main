@@ -1,0 +1,237 @@
+@use "../utils/variables";
+
+.card {
+  width: 100%;
+  background-color: variables.$dark-blue;
+  border-radius: 1rem;
+  margin-block-end: 1.5rem;
+  position: relative;
+
+  .card-header {
+    border-radius: 1rem;
+    padding-block: 1rem;
+
+    .header-layout {
+      display: flex;
+      align-items: center;
+      column-gap: 2rem;
+      padding: 1rem;
+    }
+
+    .name {
+      font-size: 1.75rem;
+      line-height: 2.75rem;
+      color: white;
+    }
+  }
+
+  .card-content {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 1.25rem;
+      color: white;
+    }
+
+    .current {
+      font-size: 1.75rem;
+      color: white;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &.profile .card-header {
+    background-color: variables.$blue;
+
+    img {
+      width: 4rem;
+      border: 3px solid variables.$pale-blue;
+      border-radius: 50%;
+    }
+  }
+
+  &.profile .card-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      background-color: variables.$dark-blue;
+      border: none;
+      font-weight: 500;
+      color: variables.$pale-blue;
+
+      &:hover {
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 48rem) {
+    margin-block-end: 0;
+
+    .card-content {
+      .current {
+        font-size: 2.5rem;
+      }
+    }
+
+    &.profile {
+      width: 50%;
+
+      .card-header {
+        height: 70%;
+
+        .header-layout {
+          column-gap: 0;
+          flex-direction: column;
+          align-items: start;
+          row-gap: 2rem;
+          padding: 2rem 2rem 3rem 2rem;
+
+          .name {
+            font-size: 2.75rem;
+          }
+        }
+        img {
+          width: 6rem;
+        }
+      }
+
+      .card-content {
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        padding-block: 1rem;
+      }
+    }
+
+    @media only screen and (min-width: 64rem) {
+      .card-content {
+        .current {
+          font-size: 3rem;
+        }
+      }
+
+      &.profile {
+        width: 35%;
+        .card-header {
+          .header-layout {
+            .name {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 80rem) {
+      .card-content {
+        .current {
+          font-size: 3.5rem;
+        }
+      }
+    }
+
+    .card-content .timeframe {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+}
+
+.time-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  .card {
+    margin-block-end: 6rem;
+
+    .card-header {
+      height: 5rem;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+      }
+    }
+
+    &.work .card-header {
+      background-color: variables.$light-red-work;
+    }
+
+    &.play .card-header {
+      background-color: variables.$soft-blue-play;
+    }
+
+    &.study .card-header {
+      background-color: variables.$light-red-study;
+    }
+
+    &.exercise .card-header {
+      background-color: variables.$lime-green-exercise;
+    }
+
+    &.social .card-header {
+      background-color: variables.$violet-social;
+    }
+
+    &.self .card-header {
+      background-color: variables.$soft-orange-self-care;
+    }
+
+    .card-content {
+      width: 100%;
+      background-color: variables.$dark-blue;
+      border-radius: 1rem;
+      position: absolute;
+      top: 40px;
+
+      &:hover {
+        background-color: variables.$blue;
+        cursor: pointer;
+      }
+    }
+  }
+  @media only screen and (min-width: 48rem) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    .card {
+      margin-block-end: 0;
+
+      .card-content {
+        padding-block: 1rem;
+        bottom: 0;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 64rem) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .card {
+      margin-block-end: 0;
+
+      .card-content {
+        padding-block: 1rem;
+      }
+    }
+  }
+}
