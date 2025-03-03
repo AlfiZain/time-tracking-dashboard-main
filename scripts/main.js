@@ -58,7 +58,7 @@ const showCards = (timeframe) => {
     timeList.innerHTML += `
       <div class="card ${item.title.toLowerCase()}">
         <div class="card-header">
-            <img src="../images/icon-${item.title.toLowerCase()}.svg" />
+            <img src="./images/icon-${item.title.toLowerCase()}.svg" />
         </div>
         <div class="card-content">
           <div>

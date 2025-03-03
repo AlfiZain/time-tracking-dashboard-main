@@ -45,7 +45,7 @@ Users should be able to:
 ### What I learned
 
 ```js
-fetch("/data.json")
+fetch("./data.json")
   .then((response) => {
     if (!response.ok) return console.log("Something went wrong.");
 
