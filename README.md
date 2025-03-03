@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://alfizain.github.io/newsletter-sign-up/](https://alfizain.github.io/newsletter-sign-up/)
+- Live Site URL: [https://alfizain.github.io/time-tracking-dashboard-main/](https://alfizain.github.io/time-tracking-dashboard-main/)
 
 ## My process
 
